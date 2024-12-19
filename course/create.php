@@ -1,39 +1,40 @@
 <?php
-include_once '../config/db.php';
+include_once '../partial/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Create</title>
-</head>
 
-<body>
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $name = $_POST['name'];
-        $description = $_POST['description'];
+<h1 class="my-3">
 
-        $sql = "INSERT INTO courses (name, description)
+    <a class="btn btn-outline-secondary" href="<?= $base_url ?>/course/index.php">
+        &larr;
+    </a>
+    Create Course
+</h1>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+
+    $sql = "INSERT INTO courses (name, description)
       VALUES ('$name', '$description')";
 
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    ?>
+}
+?>
 
-    <form method="post">
-        <input type="text" name="name" />
-        <br />
-        <textarea name="description"></textarea>
-        <br />
-        <button type="submit">Create</button>
-    </form>
-</body>
+<form method="post">
+    <input type="text" name="name" class="form-control" placeholder="Enter Title" />
+    <br />
+    <textarea name="description" class="form-control" placeholder="Enter Description" rows="5"></textarea>
+    <br />
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
 
-</html>
+<?php
+include_once '../partial/footer.php';
+?>
