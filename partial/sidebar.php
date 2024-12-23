@@ -24,27 +24,27 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <a class="nav-link d-flex align-items-center gap-2" href="<?= $base_url ?> /student/index.php">
                         <svg class="bi">
                             <use xlink:href="#cart" />
                         </svg>
-                        Products
+                        Students
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <a class="nav-link d-flex align-items-center gap-2" href="<?= $base_url ?> /teacher/index.php">
                         <svg class="bi">
                             <use xlink:href="#people" />
                         </svg>
-                        Customers
+                        Teachers
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <a class="nav-link d-flex align-items-center gap-2" href="<?= $base_url ?> /class/index.php">
                         <svg class="bi">
                             <use xlink:href="#graph-up" />
                         </svg>
-                        Reports
+                        Classes
                     </a>
                 </li>
                 <li class="nav-item">
